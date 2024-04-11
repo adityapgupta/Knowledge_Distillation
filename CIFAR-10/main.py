@@ -5,7 +5,7 @@ import torchvision
 import torchvision.transforms as transforms
 
 from torch import nn
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset
 from utils import AverageMeter, KDLoss
 
 
@@ -134,6 +134,13 @@ if __name__ == "__main__":
 
     train_set = torchvision.datasets.CIFAR10(root="Datasets", train=True, download=True, transform=transform)
     test_set = torchvision.datasets.CIFAR10(root="Datasets", train=False, download=True, transform=transform)
+
+    # Reduced train set
+    reduced_indices = []
+    for i in range(10):
+        for j in range(i * 5000, (i+1) * 5000 - 4500):
+            reduced_indices.append(i)
+    train_set = Subset(train_set, reduced_indices)
 
     model = Models.resnet18(device=args['device'])
     teacher = Models.resnet50(device=args['device'], pretrained=True)
