@@ -140,7 +140,7 @@ if __name__ == "__main__":
     for i in range(10):
         for j in range(i * 5000, (i+1) * 5000 - 4500):
             reduced_indices.append(i)
-    train_set = Subset(train_set, reduced_indices)
+    train_set = Subset(train_set, reduced_indices) # comment this out to use the full train set
 
     model = Models.resnet18(device=args['device'])
     teacher = Models.resnet50(device=args['device'], pretrained=True)
