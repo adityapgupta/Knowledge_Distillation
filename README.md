@@ -1,2 +1,2 @@
 # Knowledge_Distillation
-UMC203 Term Paper
+UMC203 Term Paper 2024
