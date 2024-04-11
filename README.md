@@ -5,3 +5,5 @@ The CIFAR code uses a pretrained ResNet50 model as the teacher. Download the fil
 https://drive.google.com/drive/folders/196Kj-J8N4xqRb66OuJ5eSmqF0axfGK6W?usp=drive_link
 
 To learn more about Knowledge distillation, refer to Report.pdf
+
+Most of the code used in the CIFAR experiments was taken from https://github.com/wangyz1608/knowledge-distillation-via-nd
