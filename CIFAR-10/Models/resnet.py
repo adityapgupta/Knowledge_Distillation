@@ -261,7 +261,7 @@ class ResNet(nn.Module):
 def _resnet(arch, block, layers, pretrained, progress, device, **kwargs):
     model = ResNet(block, layers, **kwargs)
     if pretrained:
-        state_dict = torch.load("Models/" + str(arch) + ".pt", map_location=device) # path to resnet50.pt file
+        state_dict = torch.load("CIFAR-10/Models/" + str(arch) + ".pt", map_location=device) # path to resnet50.pt file
         model.load_state_dict(state_dict)
         print("Teacher loaded")
     return model
